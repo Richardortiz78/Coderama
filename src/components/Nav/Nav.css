@@ -1,0 +1,43 @@
+/* Contenedor del nav */
+nav {
+  background-color: #0d0d0d; /* fondo oscuro tipo gaming */
+  padding: 12px 30px;
+  border-bottom: 3px solid #ff0055; /* borde vibrante */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Lista horizontal */
+nav ul {
+  display: flex;
+  gap: 30px; /* espacio entre pestañas */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+/* Links individuales */
+nav ul li a {
+  text-decoration: none;
+  color: #00ffff; /* color vibrante inicial */
+  font-family: 'Press Start 2P', cursive; /* fuente gamer */
+  font-size: 0.9rem;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Efecto hover */
+nav ul li a:hover {
+  color: #ff0055;
+  background: linear-gradient(45deg, #ff0055, #ffcc00);
+  transform: scale(1.1);
+  text-shadow: 0 0 10px #ff0055, 0 0 10px #ffcc00;
+}
+
+/* Link activo (opcional) */
+nav ul li a.active {
+  color: #ffcc00;
+  text-shadow: 0 0 8px #ffcc00;
+}

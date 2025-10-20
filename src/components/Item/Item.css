@@ -1,0 +1,14 @@
+.item-card {
+  border: 1px solid #ddd;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.item-img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 8px;
+}

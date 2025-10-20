@@ -1,0 +1,15 @@
+.footer-container {
+  background-color: #0d0d0d; /* mismo fondo que Header/Nav */
+  border-top: 3px solid #ff0055; /* borde vibrante tipo neón */
+  text-align: center;
+  padding: 15px 20px;
+  color: #00ffff; /* color vibrante */
+  font-family: 'Press Start 2P', cursive; /* fuente arcade */
+  font-size: 0.8rem;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.footer-container p {
+  margin: 5px 0;
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #ff0055;
+}

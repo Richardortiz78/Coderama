@@ -1,0 +1,31 @@
+/* Contenedor principal del header */
+.header-container {
+  display: flex;
+  justify-content: space-between; /* logo a la izquierda, nav a la derecha */
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #0d0d0d; /* fondo oscuro tipo gaming */
+  border-bottom: 3px solid #ff0055; /* borde vibrante */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Contenedor logo + título */
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Logo */
+.logo2 {
+  width: 100px; /* ajusta según el tamaño de tu logo */
+  height: 100px;
+}
+
+/* Título de la página */
+.site-title {
+  font-family: 'Press Start 2P', cursive; /* fuente estilo arcade */
+  font-size: 2.5rem;
+  color: #00ffff; /* color vibrante */
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #ff0055; /* efecto neon */
+}
