@@ -13,32 +13,43 @@ export const CartProvider = ({children}) => {
 
     const addItem = (item) => {
         if (exists (item.id)) {
-            alert ("El producto ya existe en el carrito");
-            return;
-        };
+            //map, cuido mutación a nivel del array
+            const updatedCart = cart.map((prod) => {
+               if (prod.id === item.id){
+                //cuidar mutacion a nivel objeto
+                return {...prod, quantity: prod.quantity + (item.quantity || 1)}
+               } 
+                return prod;
+               
+            })
+            setCart(updatedCart);
+            }else{
+            setCart([...cart, {...item, quantity: item.quantity || 1}]);
+            alert(`${item.nombre} agregado`);
+            }
+    };
     
-    setCart([...cart, item]);
-   alert(`${item.nombre} agregado`);
+  const deleteItem = (id) => {
+    setCart(cart.filter((p) => p.id !== id));
+  };
 
-    };
+  const clearCart = () => {
+    setCart([]);
+  };
 
-    const clearCart = () => {
-        setCart([])
-        
-    };
+  const getTotalItems = () => cart.reduce((acc, p) => acc + p.quantity, 0);
 
-    const getTotalItems = () => {
-        if (cart.length) {
-            return cart.length;
-        }
-    };
-
+  const total = () =>
+    Math.round(cart.reduce((acc, p) => acc + p.precio * p.quantity, 0) * 100) /
+    100;
 
     const values = {
         cart, 
         addItem, 
+        deleteItem,
         clearCart, 
         getTotalItems,
+        total,
     }
     
     return <CartContext.Provider value={values}>{children}</CartContext.Provider>;

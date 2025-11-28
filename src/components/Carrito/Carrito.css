@@ -1,58 +1,145 @@
 .carrito-container {
   max-width: 900px;
   margin: 2rem auto;
-  padding: 1.5rem;
-  background-color: #1c1c2b; /* fondo oscuro */
-  color: #f5f5f5; /* texto claro */
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  font-family: 'Press Start 2P', sans-serif; /* estilo gamer */
+  padding: 2rem;
+  background: linear-gradient(135deg, #0d0d15, #1a1a2e 60%, #111122);
+  color: #f5f5f5;
+  border-radius: 18px;
+  border: 2px solid rgba(0, 255, 180, 0.4);
+  box-shadow:
+    0 0 20px rgba(0, 255, 180, 0.2),
+    0 0 40px rgba(0, 100, 255, 0.15),
+    inset 0 0 15px rgba(0, 255, 180, 0.05);
+  font-family: 'Press Start 2P', sans-serif;
+  animation: neonPulse 3s infinite ease-in-out;
+}
+
+@keyframes neonPulse {
+  0% { box-shadow: 0 0 20px rgba(0,255,180,0.15), inset 0 0 10px rgba(0,255,180,0.05); }
+  50% { box-shadow: 0 0 30px rgba(0,255,180,0.4), inset 0 0 18px rgba(0,255,180,0.1); }
+  100% { box-shadow: 0 0 20px rgba(0,255,180,0.15), inset 0 0 10px rgba(0,255,180,0.05); }
 }
 
 .carrito-container h2 {
   text-align: center;
-  color: #ff4c4c; /* color vibrante para el título */
-  margin-bottom: 1rem;
+  color: #00eaff;
+  text-shadow:
+    0 0 8px #00eaff,
+    0 0 16px #0088ff,
+    0 0 32px #0055ff;
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
 }
 
 .carrito-container ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
+/* TARJETA DEL ITEM */
 .carrito-container li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #2c2c3c; /* contraste con el fondo */
-  margin-bottom: 0.8rem;
-  padding: 0.8rem 1rem;
-  border-radius: 8px;
-  transition: transform 0.2s, background-color 0.2s;
+  background: rgba(20, 20, 40, 0.9);
+  border: 2px solid rgba(0, 255, 180, 0.2);
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.25s, border-color 0.25s;
+  position: relative;
 }
 
 .carrito-container li:hover {
-  background-color: #3d3d5a;
-  transform: scale(1.02);
+  transform: scale(1.03);
+  border-color: #00ffaa;
+  box-shadow:
+    0 0 12px rgba(0, 255, 180, 0.6),
+    inset 0 0 8px rgba(0, 255, 180, 0.2);
 }
 
+/* IMAGEN DEL PRODUCTO */
 .carrito-container img {
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 8px;
+  border: 2px solid #00ffaa;
+  box-shadow: 0 0 10px rgba(0,255,170,0.3);
   margin-right: 1rem;
 }
 
+/* TEXTO */
 .carrito-container span {
-  margin: 0 0.5rem;
-  font-size: 0.9rem;
+  margin: 0 0.4rem;
+  font-size: 0.8rem;
+  text-shadow: 0 0 4px rgba(255,255,255,0.4);
 }
 
+/* BOTÓN ELIMINAR */
+.carrito-container button {
+  background: linear-gradient(to right, #ff005d, #ff006a, #ff1177);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-family: 'Press Start 2P';
+  font-size: 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 0 10px rgba(255, 0, 90, 0.5);
+}
+
+.carrito-container button:hover {
+  transform: scale(1.08);
+  box-shadow:
+    0 0 15px rgba(255, 0, 90, 0.8),
+    0 0 30px rgba(255, 0, 90, 0.5);
+}
+
+/* TOTAL */
 .carrito-container .total {
   text-align: right;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: bold;
-  color: #00ff99; /* color para resaltar total */
-  margin-top: 1rem;
+  margin-top: 2rem;
+  color: #00ff9d;
+  text-shadow:
+    0 0 6px #00ffaa,
+    0 0 18px #00ffbf,
+    0 0 26px #00ffcc;
+}
+.carrito-vacio {
+  font-family: 'Press Start 2P', sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  color: #00eaff;
+  margin-top: 2rem;
+
+  text-shadow:
+    0 0 6px #00eaff,
+    0 0 14px #0088ff,
+    0 0 22px rgba(0, 150, 255, 0.8);
+  
+  animation: glowText 2.5s ease-in-out infinite;
+}
+
+@keyframes glowText {
+  0% {
+    text-shadow:
+      0 0 4px #00eaff,
+      0 0 10px #0088ff;
+  }
+  50% {
+    text-shadow:
+      0 0 10px #00eaff,
+      0 0 25px #0088ff,
+      0 0 40px #0055ff;
+  }
+  100% {
+    text-shadow:
+      0 0 4px #00eaff,
+      0 0 10px #0088ff;
+  }
 }

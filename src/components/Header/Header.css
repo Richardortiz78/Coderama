@@ -29,3 +29,10 @@
   color: #00ffff; /* color vibrante */
   text-shadow: 0 0 5px #00ffff, 0 0 10px #ff0055; /* efecto neon */
 }
+.home-link {
+  display: flex;          /* pone imagen y texto en la misma línea */
+  align-items: center;    /* los centra verticalmente */
+  gap: 15px;              /* espacio entre logo y texto */
+  text-decoration: none;  /* quita el subrayado */
+  color: inherit;         /* mantiene color del texto original */
+}
